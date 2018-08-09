@@ -29,7 +29,7 @@ router.get('/api/items', async(req, res) => {
 	const { query: { q: query } } = req;
 
 	try {
-		const search = await get(`https://api.mercadolibre.com/sites/MLA/search?q=​:${query}`);
+		const search = await get(`https://api.mercadolibre.com/sites/MLA/search?q=:${query}&limit=4`);
 
 		let categories = [];
 		let categoriesData = search.available_filters.find(({ id }) => id === 'category');
@@ -55,8 +55,8 @@ router.get('/api/items/:id', async(req, res) => {
 	const { id } = req.params;
 
 	try {
-		const itemData = await get(`https://api.mercadolibre.com/items/​${id}`);
-		const itemDescription = await get(`https://api.mercadolibre.com/items/​${id}/description`);
+		const itemData = await get(`https://api.mercadolibre.com/items/${id}`);
+		const itemDescription = await get(`https://api.mercadolibre.com/items/${id}/description`);
 
 		const categories = await getTreeCategory(itemData.category_id);
 
