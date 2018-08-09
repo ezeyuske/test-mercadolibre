@@ -37,7 +37,7 @@ const currencyMap = {
 
 const getTreeCategory = async function(id) {
 	try {
-		const categoryData = await get(`https://api.mercadolibre.com/categories/​${id}`);
+		const categoryData = await get(`https://api.mercadolibre.com/categories/${id}`);
 		if(categoryData) {
 			const categories = categoryData.path_from_root.map(({ name }) => name);
 			return categories;
