@@ -1,0 +1,25 @@
+.breadcrumb {
+	margin: 16px 0;
+	font-size: 14px;
+	font-weight: 300;
+	color: $gray2;
+
+	&__categorie {
+		color: $gray2;
+		text-decoration: none;
+
+		&:after {
+			content: '>';
+			margin: 0 6px;
+			display: inline-block;
+		}
+
+		&:last-child {
+			font-weight: 700;
+
+			&:after {
+				content: normal;
+			}
+		}
+	}
+}

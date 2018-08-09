@@ -1,0 +1,26 @@
+.header {
+	background-color: $primary;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__wrapper {
+		width: 83.33%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__logo {
+		height: 36px;
+		width: 8.33%;
+		min-width: 58px;
+		background: transparent url('/images/Logo_ML.png') top left no-repeat;
+	
+		@include retina {
+			background: transparent url('/images/Logo_ML@2x.png') top left no-repeat;
+			background-size: auto 100%;
+		}
+	}
+}
